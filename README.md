@@ -1,5 +1,9 @@
 # Your Health Timeline
 
+**🔗 Live site: <https://buildthisnextonline.github.io/your-health-timeline/>**
+Pick your name and unlock with the passphrase you were given — you'll only ever
+see your own data.
+
 A private, longitudinal view of lab reports — organised around **each person and
 their biomarkers**, not around individual PDFs. Every blood test becomes a new
 chapter in one continuous history, so you can see how a marker (LDL, Vitamin D,
