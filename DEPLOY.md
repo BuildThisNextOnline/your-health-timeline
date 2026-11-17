@@ -77,7 +77,7 @@ Only the `.enc` blobs change; passphrases stay the same unless you edit them.
 ## A note on strength
 
 A passphrase on a public ciphertext can, in principle, be attacked offline. The
-generated 3-word + number passphrases with 600k PBKDF2 iterations are reasonable
-for a small family/friends tool, but for stronger protection you can set longer
-custom passphrases in `data/passphrases.json` before building, or keep the repo
-**private** and still use the same per-person unlock.
+generated 6-word + number passphrases with 600k PBKDF2 iterations are a solid
+default, but for maximum protection you can set longer custom passphrases in
+`data/passphrases.json` before building, or keep the repo **private** and still
+use the same per-person unlock.
