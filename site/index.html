@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Health Timeline</title>
+<meta name="description" content="A private, longitudinal view of your own lab reports over time.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<main id="login" class="login">
+  <div class="login-card">
+    <div class="brand"><span class="brand-mark">🩺</span><h1>Your&nbsp;Health&nbsp;Timeline</h1></div>
+    <p class="tagline">Your lab reports, organised around <em>you</em> and your biomarkers — not scattered across PDFs. A new report is a new chapter in one timeline.</p>
+    <label class="field-label">Who are you?</label>
+    <div id="people" class="people" aria-label="Choose profile"></div>
+    <label class="field-label" for="pass">Passphrase</label>
+    <form id="unlock-form" autocomplete="off">
+      <input id="pass" type="password" placeholder="word-word-word-word-word-word-000" autocomplete="off" spellcheck="false">
+      <button id="unlock" type="submit" disabled>Unlock my timeline</button>
+    </form>
+    <p id="login-error" class="error" hidden></p>
+    <p class="privacy-note">🔒 Each person's data is encrypted with their own passphrase. This page only ever downloads scrambled data and unlocks it in your browser. No one — not even other people listed here — can read your reports without your passphrase.</p>
+  </div>
+  <p class="footer-note">A personal project inspired by the “Build This Next” essays on turning scattered reports into a living health timeline.</p>
+</main>
+
+<!-- DASHBOARD -->
+<div id="app" hidden>
+  <header class="topbar">
+    <div class="topbar-left">
+      <span id="avatar" class="avatar"></span>
+      <div>
+        <div id="person-name" class="person-name"></div>
+        <div id="person-sub" class="person-sub"></div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <button id="theme-toggle" class="icon-btn" title="Toggle light/dark">◐</button>
+      <button id="lock" class="icon-btn" title="Lock and sign out">Lock</button>
+    </div>
+  </header>
+
+  <div class="disclaimer" id="disclaimer"></div>
+
+  <section class="glance" id="glance"></section>
+
+  <section class="controls">
+    <div class="tabs" id="panel-tabs"></div>
+    <label class="flagged-toggle"><input type="checkbox" id="only-flagged"> Only show markers needing attention</label>
+  </section>
+
+  <section id="panels" class="panels"></section>
+
+  <footer class="app-footer" id="app-footer"></footer>
+</div>
+
+<!-- DETAIL MODAL -->
+<div id="modal" class="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close title="Close">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

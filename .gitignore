@@ -1,0 +1,41 @@
+# PRIVACY: never commit plaintext health data or secrets.
+# Only encrypted blobs (site/data/*.enc) and the names-only manifest are public.
+# NOTE: .gitignore does not support inline comments — keep comments on their own lines.
+
+# plaintext extracted lab values
+data/structured/
+# plaintext per-person payloads (pre-encryption)
+data/payload/
+# raw extracted report text
+data/raw_text/
+# extraction review / dropped logs
+data/provenance/
+# the per-person passphrases — KEEP THIS SECRET
+data/passphrases.json
+# plaintext written summaries (contain health data)
+reports/
+
+# The source health records folder is never inside this project, but just in case:
+Health/
+
+# Unpublished draft essays — keep out of the public repo
+input/
+
+# Personal pipeline config: full names, source-file paths, hand-transcribed values.
+# Copy the committed *.example.py versions to these names and fill in locally.
+scripts/reports_manifest.py
+scripts/manual_extracts.py
+
+# Python / Node
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Safety net: never commit any plaintext data files, but DO allow the site's data.
+data/**
+!site/
+!site/data/
+!site/data/*.enc
+!site/data/manifest.json
